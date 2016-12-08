@@ -1,7 +1,10 @@
 var path = require('path');
 
 module.exports = {
-	entry: './js/entry.js',
+	entry: [
+		'webpack/hot/dev-server',
+		'webpack-dev-server/client?http://localhost:2333/html',
+		'./js/entry.js'],
 	output: {
 		path: path.join(__dirname, 'js/dist'),
 		filename: 'bundle.js'
@@ -9,7 +12,10 @@ module.exports = {
 	module: {
 		loaders: [{
 			test: /\.js|jsx$/,
-			loader: 'jsx?harmony'
+			loader: 'react-hot!jsx-loader?harmony'
+		}, {
+			test: /\.css$/,
+			loader: 'style-loader!css-loader'
 		}]
 	}
 }
