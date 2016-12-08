@@ -1,8 +1,8 @@
 var React = require('react');
 
 var MessageList = React.createClass({
-	render: function () {
-		var messages = this.this.props.data.map(function (message, index) {
+	render: () => {
+		var messages = this.props.data.map((message, index) => {
 			return (
 				<li key = { index }>
 					{ message.name } said:

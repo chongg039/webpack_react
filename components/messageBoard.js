@@ -8,27 +8,27 @@ var data = [{
 }];
 
 var MessageBoard = React.createClass({
-	getInitialState: function () {
+	getInitialState: () => {
 		return {
 			data: []
 		};
 	},
-	componentDidMount: function () {
-		setTimeout(function () {
+	componentDidMount: () => {
+		setTimeout(() => {
 			this.setState({
 				data: data
 			})
 		}, 2000)
 	},
-	handleMessageSubmit: function (message) {
+	handleMessageSubmit: (message) => {
 		data.push(message);
 		this.setState({
 			data: data
 		});
 	},
-	render: function () {
+	render: () => {
 		return (
-			<div className = "messageBorad">
+			<div className = "messageBoard">
 				<h3>{ this.props.title }</h3>
 				<MessageList data = { this.state.data } />
 				<MessageForm onMessageSubmit = { this.handleMessageSubmit } />

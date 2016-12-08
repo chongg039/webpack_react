@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = {
 	entry: [
 		'webpack/hot/dev-server',
-		'webpack-dev-server/client?http://localhost:2333/html',
+		'webpack-dev-server/client?http://localhost:8080/html',
 		'./js/entry.js'],
 	output: {
 		path: path.join(__dirname, 'js/dist'),
